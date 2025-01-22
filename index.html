@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KANAYA AFFILIATE</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <script>
+    function showCategory(category) {
+      var categories = document.querySelectorAll('.category');
+      categories.forEach(function(cat) {
+        cat.style.display = 'none'; // Sembunyikan semua kategori
+      });
+      var selectedCategory = document.getElementById(category);
+      if (selectedCategory) {
+        selectedCategory.style.display = 'block'; // Tampilkan kategori yang dipilih
+        showPage(category, 1); // Panggil fungsi pagination saat kategori ditampilkan
+      }
+    }
+
+    function searchProduct(category) {
+      var input = document.getElementById(category + '-search').value.toLowerCase();
+      var products = document.querySelectorAll(`#${category} .product-link`);
+      products.forEach(function(product) {
+        var productName = product.querySelector('span').textContent.toLowerCase();
+        if (productName.includes(input)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+
+    // Panggil showCategory('baju') saat pertama kali buka halaman
+    window.onload = function() {
+      showCategory('baju');
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Kanaya Affiliate</h1>
+    <nav>
+      <ul>
+        <li><a href="javascript:void(0)" onclick="showCategory('baju')">Baju</a></li>
+        <li><a href="javascript:void(0)" onclick="showCategory('celana')">Celana</a></li>
+        <li><a href="javascript:void(0)" onclick="showCategory('atasan')">Atasan</a></li>
+        <li><a href="javascript:void(0)" onclick="showCategory('crop-top')">Crop Top</a></li>
+        <li><a href="javascript:void(0)" onclick="showCategory('aksesoris')">Aksesoris</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Kategori Baju -->
+    <section id="baju" class="category">
+      <h2>Baju</h2>
+      <input type="text" id="baju-search" placeholder="Cari Baju" oninput="searchProduct('baju')">
+      <div class="product">
+        <a href="https://www.example.com/product/baju-casual" class="product-link"><span>1 Baju Casual</span></a>
+      <!-- Add more products here -->
+      <div class="pagination" id="baju-pagination"></div>
+    </section>
+
+    <!-- Kategori Celana -->
+    <section id="celana" class="category" style="display: none;">
+      <h2>Celana</h2>
+      <input type="text" id="celana-search" placeholder="Cari Celana" oninput="searchProduct('celana')">
+      <!-- Add products here -->
+      <div class="product">
+        <a href="https://www.example.com/product/baju-casual" class="product-link"><span>celana</span></a>
+      </div>
+      <div class="pagination" id="celana-pagination"></div>
+    </section>
+
+    <!-- Kategori lainnya... -->
+  </main>
+
+  <footer>
+    <p>© 2025 Your Website</p>
+  </footer>
+</body>
+</html>

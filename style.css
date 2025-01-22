@@ -1,0 +1,122 @@
+/* Styling untuk Body dan Header */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Styling untuk Produk */
+  main {
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; /* Maksimal lebar untuk layar besar */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .category {
+    display: block;
+    width: 100%;
+  }
+  
+  .product {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .product-link {
+    display: block;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+  }
+  
+  .product-link:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Pencarian */
+  input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pagination a {
+    color: rgb(243, 243, 243);
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 0 5px;
+    background-color: #000000;
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover {
+    background-color: rgb(26, 8, 164);
+  }
+
+  /* Footer */
+  /* Styling footer */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  position: relative;  /* Buat footer mengikuti konten */
+  bottom: 0;
+}
+
+  
+  
